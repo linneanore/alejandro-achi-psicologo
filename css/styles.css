@@ -338,8 +338,16 @@ em { font-style: italic; color: var(--clr-copper); }
 }
 .service-card__icon {
   font-size: 1.4rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--clr-copper);
   margin-bottom: 1.25rem;
+}
+.service-card:nth-child(2) .service-card__icon {
+  font-size: 1.1rem;
 }
 .service-card h3 {
   font-family: var(--font-display);
