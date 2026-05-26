@@ -14,4 +14,4 @@ Professional website for Alejandro Achi Antón, licensed clinical psychologist b
 - Contact form
 
 ## Live Site
-[View live site](https://DITT-ANVÄNDARNAMN.github.io/alejandro-achi-psicologo/)
+[View live site](https://alejandro-achi-psicologo.vercel.app/)
