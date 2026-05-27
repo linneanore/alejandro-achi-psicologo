@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
       </nav>
       <div class="nav__right">
         <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">ES · EN</button>
-        <a href="#contacto" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+        <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
       </div>
       <button class="nav__burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -34,10 +35,9 @@
       <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
       <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-      <a href="#contacto" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
     </div>
   </header>
-
 
   <section class="hero" id="hero">
     <div class="hero__bg-text" aria-hidden="true">Psicología</div>
@@ -52,7 +52,7 @@
         Ayudo a personas a transitar la ansiedad, los cambios vitales y los retos relacionales — con calidez, curiosidad y atención basada en la evidencia.
       </p>
       <div class="hero__actions">
-        <a href="#contacto" class="btn btn--primary btn--lg" data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</a>
+        <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary btn--lg" data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</a>
         <a href="#sobre-mi" class="btn btn--ghost btn--lg" data-es="Conocer más" data-en="Learn more">Conocer más</a>
       </div>
     </div>
@@ -62,7 +62,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="about" id="sobre-mi">
     <div class="about__inner">
@@ -93,7 +92,6 @@
     </div>
   </section>
 
-
   <section class="services" id="servicios">
     <div class="services__inner">
       <p class="section-label" data-es="Lo que ofrezco" data-en="What I offer">Lo que ofrezco</p>
@@ -102,7 +100,7 @@
 
         <article class="service-card">
           <div class="service-card__icon" aria-hidden="true">
-          <i class="ph ph-cloud-fog"></i>
+            <i class="ph ph-cloud-fog"></i>
           </div>
           <h3 data-es="Ansiedad y estrés" data-en="Anxiety & stress">Ansiedad y estrés</h3>
           <p data-es="Aprende a comprender y regular tus respuestas de ansiedad con herramientas prácticas basadas en evidencia." data-en="Learn to understand and regulate your anxiety responses with practical, evidence-based tools.">
@@ -112,7 +110,7 @@
 
         <article class="service-card">
           <div class="service-card__icon" aria-hidden="true">
-          <i class="ph ph-compass"></i>
+            <i class="ph ph-compass"></i>
           </div>
           <h3 data-es="Transiciones vitales" data-en="Life transitions">Transiciones vitales</h3>
           <p data-es="Cambios de trabajo, relaciones, identidad o rumbo vital. Te acompaño en los momentos de incertidumbre y transformación." data-en="Career changes, relationships, identity or life direction. I support you through moments of uncertainty and transformation.">
@@ -122,7 +120,7 @@
 
         <article class="service-card">
           <div class="service-card__icon" aria-hidden="true">
-          <i class="ph ph-intersect"></i>
+            <i class="ph ph-intersect"></i>
           </div>
           <h3 data-es="Relaciones y vínculos" data-en="Relationships & bonds">Relaciones y vínculos</h3>
           <p data-es="Explora patrones relacionales, mejora la comunicación y construye conexiones más sanas y satisfactorias." data-en="Explore relational patterns, improve communication and build healthier, more fulfilling connections.">
@@ -132,7 +130,7 @@
 
         <article class="service-card">
           <div class="service-card__icon" aria-hidden="true">
-          <i class="ph ph-bird"></i>
+            <i class="ph ph-bird"></i>
           </div>
           <h3 data-es="Bienestar y crecimiento" data-en="Wellbeing & growth">Bienestar y crecimiento</h3>
           <p data-es="No hace falta estar en crisis para buscar apoyo. La terapia también es un espacio para conocerte mejor y crecer." data-en="You don't need to be in crisis to seek support. Therapy is also a space for self-knowledge and growth.">
@@ -158,8 +156,8 @@
             <a href="tel:+34635157517">+34 635 157 517</a>
           </li>
           <li>
-          <span class="contact__icon" aria-hidden="true">✉</span>
-          <a href="mailto:aachianton.psy@gmail.com" data-es="aachianton.psy@gmail.com" data-en="aachianton.psy@gmail.com">aachianton.psy@gmail.com</a>
+            <span class="contact__icon" aria-hidden="true">✉</span>
+            <a href="mailto:aachianton.psy@gmail.com" data-es="aachianton.psy@gmail.com" data-en="aachianton.psy@gmail.com">aachianton.psy@gmail.com</a>
           </li>
           <li>
             <span class="contact__icon" aria-hidden="true">◷</span>
@@ -210,5 +208,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
 </body>
 </html>
