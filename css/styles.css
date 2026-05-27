@@ -144,4 +144,7 @@ em { font-style: italic; color: var(--clr-copper); }
   .hero { min-height: auto; padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; align-items: center; }
   .hero__image-placeholder { max-width: 360px; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .about { padding: 4rem 2rem; }
+  .services { padding: 4rem 2rem; }
+  .contact { padding: 4rem 2rem; }
 }
