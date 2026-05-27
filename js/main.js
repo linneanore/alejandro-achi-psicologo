@@ -8,15 +8,11 @@ function setLanguage(lang) {
     el.textContent = el.getAttribute(`data-${lang}`);
   });
 
-
   document.querySelectorAll('[data-es-placeholder]').forEach(el => {
-    el.placeholder = el.getAttribute(`data-${lang}-placeholder`) || '';
+    el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
   });
 
-
   langToggle.textContent = lang === 'es' ? 'ES · EN' : 'EN · ES';
-
-
   document.documentElement.lang = lang;
 }
 
@@ -62,29 +58,60 @@ document.querySelectorAll(
 
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('formSuccess');
+const submitBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById('nombre').value.trim();
   const email  = document.getElementById('email').value.trim();
 
   if (!nombre || !email) {
-
     if (!nombre) document.getElementById('nombre').focus();
     else document.getElementById('email').focus();
     return;
   }
 
-  // TODO: Replace this with a real form submission (Formspree, EmailJS, etc.)
-  const msg = currentLang === 'es'
-    ? '¡Mensaje enviado! Te responderé pronto.'
-    : 'Message sent! I\'ll get back to you soon.';
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
+  submitBtn.disabled = true;
 
-  successMsg.textContent = msg;
-  form.reset();
+  try {
+    const response = await fetch('https://formspree.io/f/mredrzbw', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nombre:    document.getElementById('nombre').value,
+        apellidos: document.getElementById('apellidos').value,
+        email:     document.getElementById('email').value,
+        servicio:  document.getElementById('servicio').value,
+        mensaje:   document.getElementById('mensaje').value,
+      })
+    });
+
+    if (response.ok) {
+      successMsg.textContent = currentLang === 'es'
+        ? '¡Mensaje enviado! Te responderé en un día hábil.'
+        : 'Message sent! I\'ll get back to you within one working day.';
+      successMsg.style.color = 'var(--clr-copper-dk)';
+      form.reset();
+    } else {
+      throw new Error('Formspree error');
+    }
+
+  } catch (err) {
+    successMsg.textContent = currentLang === 'es'
+      ? 'Algo salió mal. Por favor, inténtalo de nuevo o escríbeme directamente.'
+      : 'Something went wrong. Please try again or contact me directly.';
+    successMsg.style.color = '#c0392b';
+  }
+
+  submitBtn.textContent = originalText;
+  submitBtn.disabled = false;
 });
-
 
 
 const nav = document.getElementById('nav');
@@ -93,3 +120,5 @@ window.addEventListener('scroll', () => {
     ? '0 4px 24px rgba(42, 33, 24, 0.08)'
     : 'none';
 });
+
+setLanguage('es');

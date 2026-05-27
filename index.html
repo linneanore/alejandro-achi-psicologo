@@ -24,7 +24,7 @@
       </nav>
       <div class="nav__right">
         <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">ES · EN</button>
-        <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+        <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
       </div>
       <button class="nav__burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -35,7 +35,7 @@
       <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
       <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+      <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
     </div>
   </header>
 
@@ -52,7 +52,7 @@
         Ayudo a personas a transitar la ansiedad, los cambios vitales y los retos relacionales — con calidez, curiosidad y atención basada en la evidencia.
       </p>
       <div class="hero__actions">
-        <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aachianton-psi/consulta'}); return false;" class="btn btn--primary btn--lg" data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</a>
+        <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary btn--lg" data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</a>
         <a href="#sobre-mi" class="btn btn--ghost btn--lg" data-es="Conocer más" data-en="Learn more">Conocer más</a>
       </div>
     </div>
@@ -170,16 +170,28 @@
         <div class="form-row">
           <div class="form-group">
             <label for="nombre" data-es="Nombre" data-en="First name">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="María" required />
+            <input type="text" id="nombre" name="nombre"
+              placeholder="María"
+              data-es-placeholder="María"
+              data-en-placeholder="María"
+              required />
           </div>
           <div class="form-group">
             <label for="apellidos" data-es="Apellidos" data-en="Last name">Apellidos</label>
-            <input type="text" id="apellidos" name="apellidos" placeholder="García" required />
+            <input type="text" id="apellidos" name="apellidos"
+              placeholder="García"
+              data-es-placeholder="García"
+              data-en-placeholder="Smith"
+              required />
           </div>
         </div>
         <div class="form-group">
           <label for="email" data-es="Email" data-en="Email">Email</label>
-          <input type="email" id="email" name="email" placeholder="maria@email.com" required />
+          <input type="email" id="email" name="email"
+            placeholder="maria@email.com"
+            data-es-placeholder="maria@email.com"
+            data-en-placeholder="your@email.com"
+            required />
         </div>
         <div class="form-group">
           <label for="servicio" data-es="Me interesa" data-en="I'm interested in">Me interesa</label>
@@ -189,11 +201,15 @@
             <option value="transiciones" data-es="Transiciones vitales" data-en="Life transitions">Transiciones vitales</option>
             <option value="relaciones" data-es="Relaciones y vínculos" data-en="Relationships & bonds">Relaciones y vínculos</option>
             <option value="bienestar" data-es="Bienestar y crecimiento" data-en="Wellbeing & growth">Bienestar y crecimiento</option>
+            <option value="otro" data-es="Otro" data-en="Other">Otro</option>
           </select>
         </div>
         <div class="form-group">
           <label for="mensaje" data-es="Mensaje" data-en="Message">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame un poco qué estás buscando…"></textarea>
+          <textarea id="mensaje" name="mensaje" rows="5"
+            placeholder="Cuéntame un poco qué estás buscando…"
+            data-es-placeholder="Cuéntame un poco qué estás buscando…"
+            data-en-placeholder="Tell me a little about what you're looking for…"></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--full" data-es="Enviar mensaje →" data-en="Send message →">Enviar mensaje →</button>
         <p class="form-success" id="formSuccess" data-es="¡Mensaje enviado! Te responderé pronto." data-en="Message sent! I'll get back to you soon."></p>
@@ -208,6 +224,19 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+  <script>
+    function loadCalendly(url) {
+      if (window.Calendly) {
+        Calendly.initPopupWidget({ url });
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.onload = () => Calendly.initPopupWidget({ url });
+      document.head.appendChild(script);
+    }
+  </script>
+
 </body>
 </html>
