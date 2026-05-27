@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -24,7 +23,7 @@
       </nav>
       <div class="nav__right">
         <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">ES · EN</button>
-        <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+        <a href="" onclick="Cal.ns.consulta('modal', {calLink: 'alejandro-achi-anton-gjpzwy/consulta'}); return false;" class="btn btn--primary"><span data-es="Reservar consulta" data-en="Book a session">Reservar consulta</span></a>
       </div>
       <button class="nav__burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -35,7 +34,7 @@
       <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
       <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
       <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-      <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary" data-es="Reservar consulta" data-en="Book a session">Reservar consulta</a>
+      <a href="" onclick="Cal.ns.consulta('modal', {calLink: 'alejandro-achi-anton-gjpzwy/consulta'}); return false;" class="btn btn--primary"><span data-es="Reservar consulta" data-en="Book a session">Reservar consulta</span></a>
     </div>
   </header>
 
@@ -52,7 +51,7 @@
         Ayudo a personas a transitar la ansiedad, los cambios vitales y los retos relacionales — con calidez, curiosidad y atención basada en la evidencia.
       </p>
       <div class="hero__actions">
-        <a href="" onclick="loadCalendly('https://calendly.com/aachianton-psi/consulta'); return false;" class="btn btn--primary btn--lg" data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</a>
+        <a href="" onclick="Cal.ns.consulta('modal', {calLink: 'alejandro-achi-anton-gjpzwy/consulta'}); return false;" class="btn btn--primary btn--lg"><span data-es="Reservar una consulta" data-en="Book a session">Reservar una consulta</span></a>
         <a href="#sobre-mi" class="btn btn--ghost btn--lg" data-es="Conocer más" data-en="Learn more">Conocer más</a>
       </div>
     </div>
@@ -225,17 +224,10 @@
 
   <script src="js/main.js"></script>
 
-  <script>
-    function loadCalendly(url) {
-      if (window.Calendly) {
-        Calendly.initPopupWidget({ url });
-        return;
-      }
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.onload = () => Calendly.initPopupWidget({ url });
-      document.head.appendChild(script);
-    }
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, [L, namespace, ar[2]])} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "consulta", {origin:"https://cal.com"});
+    Cal.ns.consulta("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
 </body>
