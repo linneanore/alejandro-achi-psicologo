@@ -1,3 +1,7 @@
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
+
 const langToggle = document.getElementById('langToggle');
 let currentLang = 'es';
 
