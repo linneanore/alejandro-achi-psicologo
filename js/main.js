@@ -121,4 +121,10 @@ window.addEventListener('scroll', () => {
     : 'none';
 });
 
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 640) {
+    mobileMenu.classList.remove('open');
+  }
+});
+
 setLanguage('es');
