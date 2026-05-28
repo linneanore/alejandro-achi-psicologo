@@ -50,7 +50,8 @@ em { font-style: italic; color: var(--clr-copper); }
 
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(245, 240, 232, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--clr-border); transition: background var(--transition); }
 .nav__inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; gap: 2rem; }
-.nav__logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; white-space: nowrap; margin-right: auto; }
+.nav__logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; white-space: nowrap; margin-right: auto; display: flex; align-items: center; padding-left: 0; }
+.nav__logo-img { height: 62px; width: auto; display: block; margin-top: 4px; margin-bottom: 4px; }
 .nav__links { display: flex; gap: 2rem; }
 .nav__links a { font-size: 0.875rem; color: var(--clr-text-muted); transition: color var(--transition); }
 .nav__links a:hover { color: var(--clr-copper); }
@@ -141,13 +142,7 @@ em { font-style: italic; color: var(--clr-copper); }
 
 /* IPAD PORTRAIT */
 @media (min-width: 901px) and (max-width: 1100px) {
-  .hero { 
-    min-height: 0 !important; 
-    height: auto !important;
-    padding-top: calc(var(--nav-h) + 2rem); 
-    padding-bottom: 2rem; 
-    align-items: center; 
-  }
+  .hero { min-height: 0 !important; height: auto !important; padding-top: calc(var(--nav-h) + 2rem); padding-bottom: 2rem; align-items: center; }
   .hero__image-placeholder { max-width: 360px; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .about { padding: 4rem 2rem; }
