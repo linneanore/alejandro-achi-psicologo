@@ -14,6 +14,18 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text" data-es="Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra política de privacidad." data-en="We use cookies to improve your experience. By continuing, you accept our privacy policy.">
+      Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra política de privacidad.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--ghost cookie-banner__decline" id="cookieDecline" data-es="Solo esenciales" data-en="Essential only">Solo esenciales</button>
+      <button class="btn btn--primary cookie-banner__accept" id="cookieAccept" data-es="Aceptar" data-en="Accept">Aceptar</button>
+    </div>
+  </div>
+</div>
 <body>
 
   <header class="nav" id="nav">

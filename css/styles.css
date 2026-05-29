@@ -164,3 +164,37 @@ em { font-style: italic; color: var(--clr-copper); }
   .services { padding: 4rem 2rem; }
   .contact { padding: 4rem 2rem; }
 }
+
+.cookie-banner {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: calc(100% - 4rem);
+  max-width: 700px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 40px rgba(42, 33, 24, 0.12);
+  padding: 1.25rem 1.5rem;
+  display: none;
+}
+.cookie-banner.visible { display: block; }
+.cookie-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cookie-banner__text {
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+  flex: 1;
+  min-width: 200px;
+}
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
