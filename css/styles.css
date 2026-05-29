@@ -66,7 +66,7 @@ em { font-style: italic; color: var(--clr-copper); }
 .nav__mobile.open { display: flex; }
 
 .hero { min-height: 100vh; padding: calc(var(--nav-h) + 4rem) 2rem 6rem; max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; position: relative; }
-.hero__bg-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(300px, 40vw, 600px); opacity: 0.06; pointer-events: none; user-select: none; }
+.hero__bg-text { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(300px, 40vw, 600px); opacity: 0.06; pointer-events: none; user-select: none; z-index: 0; }
 .hero__bg-text img { width: 100%; height: auto; }
 .hero__label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clr-copper); margin-bottom: 1.5rem; }
 .hero__heading { margin-bottom: 1.5rem; }
