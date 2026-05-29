@@ -85,6 +85,19 @@ em { font-style: italic; color: var(--clr-copper); }
 .badge { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; color: var(--clr-copper-dk); background: rgba(176, 112, 64, 0.1); border: 1px solid rgba(176, 112, 64, 0.2); border-radius: 100px; padding: 0.3em 0.9em; }
 .about__image-wrap { position: relative; }
 .about__image-placeholder { width: 100%; aspect-ratio: 4/5; background: var(--clr-cream-dark); border-radius: var(--radius-lg); border: 1px solid var(--clr-border); display: flex; align-items: center; justify-content: center; color: var(--clr-text-muted); font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; }
+.about__image {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--clr-border);
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: 3rem;
+}
 .about__deco { position: absolute; bottom: -1.5rem; right: -1.5rem; width: 60%; height: 60%; border: 1.5px solid rgba(176, 112, 64, 0.25); border-radius: var(--radius-lg); z-index: 0; }
 
 .services { padding: 8rem 2rem; background: var(--clr-cream); }
