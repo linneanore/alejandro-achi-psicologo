@@ -75,6 +75,7 @@ em { font-style: italic; color: var(--clr-copper); }
 .hero__image-wrap { display: flex; justify-content: flex-end; align-items: flex-end; position: relative; }
 .hero__image-placeholder { width: 100%; max-width: 420px; aspect-ratio: 3/4; background: var(--clr-cream-dark); border-radius: var(--radius-lg); border: 1px solid var(--clr-border); display: flex; align-items: center; justify-content: center; color: var(--clr-text-muted); font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; position: relative; overflow: hidden; }
 .hero__image-placeholder::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, var(--clr-copper-dk) 0%, transparent 100%); opacity: 0.12; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.hero__image { width: 100%; max-width: 420px; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); }
 
 .about { background: var(--clr-white); padding: 8rem 2rem; }
 .about__inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
